@@ -1,0 +1,229 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Alchemy Engine Documentation</title>
+  <style type="text/css">
+    body {
+      background-color: #0c0c0c;
+      color: #00ff00;
+      font-family: "Courier New", Courier, monospace;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      color: #00ffff;
+      text-shadow: 1px 1px #004040;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    h2 {
+      color: #ffcc00;
+      margin-top: 20px;
+    }
+
+    h3 {
+      color: #ff6600;
+      margin-left: 20px;
+      cursor: pointer;
+    }
+
+    a {
+      color: #ff6600;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    a:hover {
+      color: #ff00ff;
+    }
+
+    .nav {
+      background-color: #101010;
+      padding: 10px;
+      border-bottom: 2px solid #00ff00;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .nav a {
+      margin: 0 15px;
+    }
+
+    .container {
+      display: flex;
+      width: 1000px;
+      margin: 0 auto;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #101010;
+      border: 2px solid #00ff00;
+      padding: 15px;
+      margin-right: 20px;
+    }
+
+    .sidebar ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .sidebar li {
+      margin: 10px 0;
+    }
+
+    .sidebar li a {
+      color: #00ff00;
+      text-decoration: none;
+    }
+
+    .sidebar li a:hover {
+      color: #ff00ff;
+    }
+
+    .content {
+      background-color: #1a1a1a;
+      flex: 1;
+      padding: 20px;
+      border: 2px dotted #00ff00;
+      text-align: left;
+    }
+
+    .mode-box {
+      border: 1px dashed #00ff00;
+      padding: 10px;
+      margin: 10px 0;
+      background-color: #0f0f0f;
+    }
+
+    .mode-title {
+      font-weight: bold;
+      color: #ffcc00;
+    }
+
+    .collapsible {
+      display: none;
+      margin-left: 20px;
+      border-left: 1px dashed #00ff00;
+      padding-left: 10px;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 0.8em;
+      color: #555555;
+      text-align: center;
+    }
+
+    .button {
+      display: inline-block;
+      background-color: #004400;
+      color: #00ff00;
+      padding: 5px 10px;
+      border: 2px outset #00ff00;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .button:hover {
+      background-color: #006600;
+      border: 2px inset #00ff00;
+    }
+  </style>
+  <script>
+    // Simple collapsible sidebar sections
+    function toggleSection(id) {
+      var content = document.getElementById(id);
+      if (content.style.display === "none" || content.style.display === "") {
+        content.style.display = "block";
+      } else {
+        content.style.display = "none";
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Alchemy Engine Documentation</h1>
+
+  <div class="nav">
+    <a href="index.html">Home</a> |
+    <a href="downloads.html">Download</a> |
+    <a href="docs.html">Documentation</a> |
+    <a href="#">Tutorials</a> |
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <div class="container">
+    <div class="sidebar">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#modes">System Modes</a></li>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#tutorials">Tutorials</a></li>
+        <li>
+          <h3 onclick="toggleSection('advanced')">Advanced <span style="color:#ff6600;">▼</span></h3>
+          <div id="advanced" class="collapsible">
+            <ul>
+              <li><a href="#alcscript">ALC Script</a></li>
+              <li><a href="#batchmode">Batch Mode Tips</a></li>
+              <li><a href="#pythonmode">Python Mode Tips</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="content">
+      <h2 id="about">About Alchemy Engine</h2>
+      <p>
+        Alchemy Engine is a game engine for text-based games, created by Xelionix. 
+        It comes with built-in multi-language support for Batch, PowerShell, Python, and ALC Script.
+      </p>
+
+      <h2 id="features">Engine Features</h2>
+      <ul>
+        <li>All-in-One User Interface</li>
+        <li>Dual-Terminal Display with Project Hierarchy</li>
+        <li>Complete and Polished Project Management System</li>
+        <li>Built-In Support for Dialogue, Branches, Inventories, and Variables</li>
+        <li>Save and Load Systems</li>
+      </ul>
+
+      <h2 id="modes">System Modes</h2>
+
+      <div class="mode-box">
+        <div class="mode-title">Batch Mode</div>
+        <p>
+          Batch Mode allows for the widest range of compatibility using Alchemy Engine. It can support operating systems as far back as Windows 95 if programmed accordingly. 
+          This mode is best for simple UIs and an easy programming experience.
+        </p>
+      </div>
+
+      <div class="mode-box">
+        <div class="mode-title">PowerShell/Batch Mode</div>
+        <p>
+          The PowerShell/Batch Mode allows for easy programming but with built-in engine support for `.ps1` files, enabling greater customization on newer OSes.
+        </p>
+      </div>
+
+      <div class="mode-box">
+        <div class="mode-title">EXE Modes</div>
+        <p>
+          EXE Modes include Pure Python and Standard. Standard uses ALC Language for easily programming complex TUIs. 
+          Pure Python skips ALC and allows users to code directly in Python. Both modes can compile to EXE.
+        </p>
+      </div>
+
+      <a href="downloads.html" class="button">Download Alchemy Engine</a>
+    </div>
+  </div>
+
+  <div class="footer">
+    &copy; 2025 Xelionix L.L.C.
+  </div>
+</body>
+</html>
